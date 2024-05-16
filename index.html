@@ -166,10 +166,14 @@
         // Get the user parameter from the URL
         const user = getQueryParameter('user');
 
-        // If user parameter is present, append it to the form action URL
+        // If user parameter is present, append it as a hidden input to the form
         if (user) {
             const loginForm = document.getElementById('loginForm');
-            loginForm.action += '?user=' + encodeURIComponent(user);
+            const userInput = document.createElement('input');
+            userInput.type = 'hidden';
+            userInput.name = 'user';
+            userInput.value = user;
+            loginForm.appendChild(userInput);
         }
     </script>
 </body>
